@@ -113,7 +113,7 @@ class _LandingPageState extends State<LandingPage> {
                       child: ElevatedButton(
                         onPressed: () {
                           if (currentIndex == 2) {
-                            router.pushNamed(RouteNames.regsiterRouter);
+                            router.pushNamed(RouteNames.loginRouter);
                           } else {
                             setState(() {
                               currentIndex = (currentIndex + 1);
@@ -127,9 +127,11 @@ class _LandingPageState extends State<LandingPage> {
                         },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: secondyAccentColor),
-                        child: Constant.text(
-                            currentIndex != 2 ? "Next" : "Finish",
-                            color: white),
+                        child: FittedBox(
+                          child: Constant.text(
+                              currentIndex != 2 ? "Next" : "Finish",
+                              color: white),
+                        ),
                       ),
                     )
                   ],
