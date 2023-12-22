@@ -67,6 +67,7 @@ flutter:
   assets:
     - assets/
     - assets/Avatars/
+    - assets/Logo/
     - .env
   #   - images/a_dot_ham.jpeg
 

@@ -1,6 +1,7 @@
 import 'package:ai_quizzy/constants/constants.dart';
 import 'package:ai_quizzy/routes/app_router_names.dart';
-import 'package:ai_quizzy/views/widgets/test_container.dart';
+import 'package:ai_quizzy/views/widgets/auth_google_button.dart';
+import 'package:ai_quizzy/views/widgets/gradient_button.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -268,23 +269,9 @@ class _RegisterState extends State<Register> {
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 25.0),
-                              child: Container(
-                                height: height * 0.065,
-                                // width: width * 0.8,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(22),
-                                  gradient: Constant.buttonGradient(),
-                                ),
-                                child: Material(
-                                  color: Colors.transparent,
-                                  child: InkWell(
-                                    borderRadius: BorderRadius.circular(22),
-                                    onTap: () {},
-                                    child: Center(
-                                        child: Constant.text("Register",
-                                            fontSize: 20)),
-                                  ),
-                                ),
+                              child: GradientButton(
+                                text: "Register",
+                                onTap: () {},
                               ),
                             ),
                             Row(
@@ -300,26 +287,10 @@ class _RegisterState extends State<Register> {
                                 const Flexible(child: Divider())
                               ],
                             ),
-                            Container(
-                              height: height * 0.065,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(22),
-                                border: Border.all(
-                                  color: white,
-                                ),
-                              ),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset("assets/google.png"),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 20.0),
-                                    child: Constant.text("Register With Google",
-                                        fontSize: 15),
-                                  )
-                                ],
-                              ),
-                            ),
+                            GoogleAuthButton(
+                              onTap: () {},
+                              text: "Register with google",
+                            )
                           ],
                         ),
                       ),
@@ -340,8 +311,9 @@ class _RegisterState extends State<Register> {
                               text: "Log In",
                               style: Constant.textStyle(color: accentColor),
                               recognizer: TapGestureRecognizer()
-                                ..onTap = () =>
-                                    router.pushNamed(RouteNames.loginRouter),
+                                ..onTap = () => router.pushNamed(
+                                      RouteNames.loginRouter,
+                                    ),
                             ),
                           ],
                         ),

@@ -11,7 +11,7 @@ class RouteConfig {
         GoRoute(
           path: '/',
           name: RouteNames.landingPage,
-          builder: (context, state) => const Register(),
+          builder: (context, state) => const LandingPage(),
         ),
         GoRoute(
           path: '/register',
