@@ -2,11 +2,42 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:intl/intl.dart';
 
 const Color white = Colors.white;
 const Color black = Colors.black;
 Color accentColor = HexColor("F07F07");
 Color secondyAccentColor = HexColor('E19C0E');
+
+double getHeight(BuildContext context) {
+  return MediaQuery.sizeOf(context).height;
+}
+
+double getWidth(BuildContext context) {
+  return MediaQuery.sizeOf(context).width;
+}
+
+Color getHardnessColor(String hardness) {
+  switch (hardness) {
+    case "Easy":
+      return const Color.fromARGB(255, 35, 255, 20);
+    case "Moderate":
+      return white;
+    default:
+      return const Color.fromRGBO(255, 9, 9, 1);
+  }
+}
+
+String getDateTimeOfQuiz(DateTime date) {
+  if (DateFormat("dd-MM-yyyy")
+          .format(date)
+          .compareTo(DateFormat("dd-MM-yyyy").format(DateTime.now())) ==
+      0) {
+    return DateFormat("HH : MM").format(date);
+  } else {
+    return DateFormat("dd-MM-yyyy").format(date);
+  }
+}
 
 class Constant {
   static Text text(
@@ -83,7 +114,7 @@ class Constant {
           textBaseline: textBaseline,
           wordSpacing: wordSpacing),
       textAlign: textAlign,
-      textDirection: textDirection,
+      //  textDirection: textDirection,
       textHeightBehavior: textHeightBehavior,
       textWidthBasis: textWidthBasis,
     );

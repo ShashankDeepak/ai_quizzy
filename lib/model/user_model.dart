@@ -4,16 +4,16 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 
 class UserModel {
-  String name;
-  String avatar;
-  String username;
-  String email;
-  int coins;
-  int rank;
-  List<String> aiQuizUidList;
-  List<String> joinedQuizUidList;
-  List<String> createdQuizUidList;
-  List<String> notificationUidList;
+  String name = "";
+  String avatar = "";
+  String username = "";
+  String email = "";
+  int coins = 0;
+  int rank = 0;
+  List<String> aiQuizUidList = [];
+  List<String> joinedQuizUidList = [];
+  List<String> createdQuizUidList = [];
+  List<String> notificationUidList = [];
   UserModel({
     required this.name,
     required this.avatar,

@@ -1,4 +1,5 @@
 import 'package:ai_quizzy/routes/app_router_names.dart';
+import 'package:ai_quizzy/views/pages/home.dart';
 import 'package:ai_quizzy/views/pages/landing_page.dart';
 import 'package:ai_quizzy/views/pages/login.dart';
 import 'package:ai_quizzy/views/pages/register.dart';
@@ -11,7 +12,7 @@ class RouteConfig {
         GoRoute(
           path: '/',
           name: RouteNames.landingPage,
-          builder: (context, state) => const LandingPage(),
+          builder: (context, state) => const HomePage(),
         ),
         GoRoute(
           path: '/register',
@@ -22,6 +23,11 @@ class RouteConfig {
           path: '/login',
           name: RouteNames.loginRouter,
           builder: (context, state) => Login(),
+        ),
+        GoRoute(
+          path: '/home',
+          name: RouteNames.homeRouter,
+          builder: (context, state) => HomePage(),
         ),
       ],
     );

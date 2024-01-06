@@ -3,9 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:ai_quizzy/model/user_model.dart';
 
 class UserProvider extends ChangeNotifier {
-  late UserModel userModel;
-  String userId = "";
+  UserModel userModel = UserModel(
+    aiQuizUidList: [],
+    avatar: "https://fakeimg.pl/180x180",
+    coins: 0,
+    createdQuizUidList: [],
+    email: "",
+    joinedQuizUidList: [],
+    name: "Shashank",
+    notificationUidList: [],
+    rank: 0,
+    username: "Shashank",
+  );
 
+  String userId = "";
   UserService userService = UserService();
 
   void setUser(String id) async {

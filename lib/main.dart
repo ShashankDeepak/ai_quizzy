@@ -6,8 +6,8 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
-  runApp(const MyApp());
   await dotenv.load(fileName: ".env");
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [Provider<UserProvider>(create: (context) => UserProvider())],
+      providers: [
+        ListenableProvider<UserProvider>(create: (context) => UserProvider())
+      ],
       child: MaterialApp.router(
           title: 'Flutter Demo',
           theme: ThemeData(

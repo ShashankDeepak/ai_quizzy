@@ -42,6 +42,8 @@ class _RegisterState extends State<Register> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             InkWell(
+                              borderRadius:
+                                  BorderRadius.circular(height * 0.15),
                               onTap: () {
                                 showModalBottomSheet(
                                     backgroundColor: Colors.transparent,
